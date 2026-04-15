@@ -1,13 +1,11 @@
 import gradio as gr
-from rag import RAGAssistant   # Make sure the file is named rag_assistant.py
-
+from rag import RAGAssistant   #
 # ========================= CONFIG =========================
-PDF_PATH = "WHP 7721 Read  The Course of WWI  1040L.pdf"   # Change if needed
-PORT = 8001                                             # Change this if you still get port error (e.g. 7880, 8000)
+PDF_PATH = "WHP 7721 Read  The Course of WWI  1040L.pdf"  
+PORT = 8001                                             
 
-# Initialize the RAG pipeline once when the app starts
 print("Loading PDF and creating vector store... This may take a minute the first time.")
-pipeline = RAGAssistant(pdf_path=PDF_PATH, verbose=False)   # verbose=False for cleaner terminal
+pipeline = RAGAssistant(pdf_path=PDF_PATH, verbose=False)   
 print("✅ PDF loaded successfully! Starting Gradio app...\n")
 
 def response(message, history):
@@ -39,8 +37,8 @@ demo = gr.ChatInterface(
 
 if __name__ == "__main__":
     demo.launch(
-        server_name="127.0.0.1",   # Localhost (safe on Windows)
-        server_port=PORT,          # You can change PORT at the top
+        server_name="127.0.0.1",   
+        server_port=PORT,          
         share=False,               # Set to True for a temporary public link
         debug=True                 # Shows more helpful error messages
     )
