@@ -39,7 +39,7 @@ if __name__ == "__main__":
     demo.launch(
         server_name="127.0.0.1",   
         server_port=PORT,          
-        share=False,               # Set to True for a temporary public link
-        debug=True                 # Shows more helpful error messages
+        share=False,              
+        debug=True                 
     )
 
